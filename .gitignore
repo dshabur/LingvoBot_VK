@@ -1,0 +1,24 @@
+# Секреты и локальная конфигурация
+.env
+.env.local
+.env.*.local
+
+# База SQLite (на сервере лучше монтировать том с путём из DATABASE_PATH)
+*.sqlite3
+*.sqlite3-*
+bot.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+ENV/
+
+# IDE / ОС
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini

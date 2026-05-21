@@ -1,0 +1,17 @@
+# Локальный или VPS-запуск с постоянной БД в томе.
+# 1. Скопируйте .env.example → .env и заполните VK_GROUP_TOKEN, VK_GROUP_ID
+# 2: docker compose up -d --build
+
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_PATH: /data/bot_data.sqlite3
+    volumes:
+      - vkbot_sqlite:/data
+
+volumes:
+  vkbot_sqlite:
